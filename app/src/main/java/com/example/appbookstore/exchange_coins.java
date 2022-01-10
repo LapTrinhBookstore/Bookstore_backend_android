@@ -11,7 +11,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.appbookstore.api.ApiService;
@@ -62,16 +61,16 @@ public class exchange_coins extends AppCompatActivity {
     // call api
     private void getListUsers(){
         ApiService.apiService.getUsers(1)
-                .enqueue(new Callback<Users>() {
+                .enqueue(new Callback<UsersModel>() {
                     @Override
-                    public void onResponse(Call<Users> call, Response<Users> response) {
-                        Users users = response.body();
-                        if (users != null){
-                            tvCoins.setText(users.getNumberOfCoins() + "");
+                    public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
+                        UsersModel usersModel = response.body();
+                        if (usersModel != null){
+                            tvCoins.setText(usersModel.getNumberOfCoins() + "");
                         }
                     }
                     @Override
-                    public void onFailure(Call<Users> call, Throwable t) {
+                    public void onFailure(Call<UsersModel> call, Throwable t) {
                         tvCoins.setText("Lỗi!");
                     }
                 });
