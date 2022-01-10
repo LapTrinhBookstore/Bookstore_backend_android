@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".change_information_personal">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/changeInfo_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:title=" "
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_back_gray" >
+            <TextView
+                android:id="@+id/book_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/googlesans_medium"
+                android:text="Chỉnh sửa thông tin"
+                android:textColor="@color/c_005792"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="200dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="38dp"
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/avt_profile"
+                    app:civ_border_color="#E9EBEE"
+                    app:civ_border_width="4dp" />
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="86dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/img_circle"
+                    android:padding="9dp"
+                    app:srcCompat="@drawable/ic_camera"
+                    tools:ignore="VectorDrawableCompat"
+                    android:alpha="0.5"/>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/changeInfo_fullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_edit"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="David Nguyen"
+                    android:textColor="@color/textColorBlue"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/changeInfo_checkBoxMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/custom_checkbox"
+                        android:padding="5dp"
+                        android:text="Nam"
+                        android:textColor="@color/textColorBlue"
+                        app:buttonTint="@color/textColorBlue" />
+
+                    <CheckBox
+                        android:id="@+id/changeInfo_checkBoxFeMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/custom_checkbox"
+                        android:padding="5dp"
+                        android:text="Nữ"
+                        android:textColor="@color/textColorBlue"
+                        app:buttonTint="@color/textColorBlue" />
+
+                    <CheckBox
+                        android:id="@+id/changeInfo_checkBoxOther"
+                        android:layout_width="81dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/custom_checkbox"
+                        android:padding="5dp"
+                        android:text="Khác"
+                        android:textColor="@color/textColorBlue"
+                        app:buttonTint="@color/textColorBlue" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/changeInfo_DoB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_edit"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:text="01/01/1990" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/changeInfo_Submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/btn_circle"
+            android:text="Lưu thông tin"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/colorLine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

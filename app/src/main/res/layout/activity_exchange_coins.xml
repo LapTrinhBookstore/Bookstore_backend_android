@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".exchange_coins">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/coin_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/c_005792"
+            app:title=" "
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_round_arrow_back_white" >
+            <TextView
+                android:id="@+id/book_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/googlesans_medium"
+                android:text="Bookstore xu"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="221dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_gradient_headerprofile" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="112dp"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/avt_profile"
+                app:civ_border_color="#E9EBEE"
+                app:civ_border_width="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/profile_image"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/profile_image"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="David Nguyen"
+                    android:textColor="@color/lightBlue"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:text="Tổng số xu"
+                        android:textColor="@color/lightBlue"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/coins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:text="300"
+                        android:textColor="@color/yellowCoin"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_pig_yellow"
+                        tools:ignore="VectorDrawableCompat" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CHÍNH SÁCH CỦA BOOKSTORE XU"
+                android:textColor="#00204A" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/ic_number_one"
+                android:drawablePadding="10dp"
+                android:text="Bookstore xu được sử dụng để giúp bạn đọc mua sách với chi phí rẻ hơn
+(20 xu = 1.000 VNĐ)"
+                android:textColor="@color/textColorBlue"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_number_two"
+                android:drawablePadding="10dp"
+                android:text="Bookstore xu không mang giá trị quy đổi thực tế."
+                android:textColor="@color/textColorBlue"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/ic_number_three"
+                android:drawablePadding="10dp"
+                android:text="Bookstore xu ra đời giúp cho cộng đồng những người yêu thích đọc sách được sôi động và tích cực hơn, hãy góp phần xây dựng một cộng đồng thân thiện để kiếm được thật nhiều xu nhé!"
+                android:textColor="@color/textColorBlue"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="LÀM THẾ NÀO ĐỂ NHẬN ĐƯỢC XU ?"
+                android:textColor="#00204A" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_number_one"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="Đăng nhập lần đầu vào Bookstore:"
+                    android:textColor="@color/textColorBlue"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="+10"
+                    android:textColor="@color/yellowCoin" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_pig_yellow"
+                    tools:ignore="VectorDrawableCompat" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="106dp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_number_two"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="Bình luận:"
+                    android:textColor="@color/textColorBlue"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="+2"
+                    android:textColor="@color/yellowCoin" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_pig_yellow"
+                    tools:ignore="VectorDrawableCompat" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="153dp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_number_three"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="Đánh giá tác phẩm:"
+                    android:textColor="@color/textColorBlue"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="+5"
+                    android:textColor="@color/yellowCoin" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_pig_yellow"
+                    tools:ignore="VectorDrawableCompat" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="LƯU Ý"
+                android:textColor="#00204A" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="214dp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_number_one"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="Một ngày chỉ có thể kiếm được"
+                    android:textColor="@color/textColorBlue"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="tối đa 10"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_pig_yellow"
+                    tools:ignore="VectorDrawableCompat" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_number_two"
+                android:drawablePadding="10dp"
+                android:text="Chỉ có thể bình luận tối đa 3 lần trên cùng 1 tác phẩm và chỉ được đánh giá 1 lần/ 1 tác phẩm."
+                android:textColor="@color/textColorBlue"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

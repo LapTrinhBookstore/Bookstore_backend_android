@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".layout_Detail1">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/detail1_toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            app:title=" "
+            app:navigationIcon="@drawable/ic_round_arrow_back" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="120dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="16dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/book_avt"
+                        android:layout_width="96dp"
+                        android:layout_height="144dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/demo"
+                        app:shapeAppearanceOverlay="@style/roundImage10dp"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="8dp" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="6dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/book_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_medium"
+                        android:text="@string/book_name"
+                        android:textColor="@color/c_00204A"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/book_author"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_medium"
+                        android:text="@string/book_author"
+                        android:textColor="@color/c_005792"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/book_nxb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:text="@string/book_nxb"
+                        android:textColor="@color/c_45505F"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/book_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="2dp"
+                        android:fontFamily="@font/googlesans_bold"
+                        android:text="@string/book_star"
+                        android:textColor="@color/c_005792"
+                        android:textSize="14sp"
+                        app:drawableRightCompat="@drawable/ic_ratingbar_star_fill_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:text="@string/book_star_text"
+                        android:textColor="@color/c_45505F"
+                        android:textSize="14sp"
+                        tools:ignore="TextContrastCheck,TextContrastCheck" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@color/c_2000204A" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:drawableEndCompat="@drawable/ic_outline_book" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:text="@string/book_category_text"
+                        android:textColor="@color/c_45505F"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@color/c_2000204A" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="28dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/book_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/book_page"
+                        android:textColor="@color/c_005792"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:text="@string/book_page_text"
+                        android:textColor="@color/c_45505F"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="25dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/book_muaSach"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="54dp"
+                    android:background="@drawable/bg_btn"
+                    android:fontFamily="@font/googlesans_bold"
+                    android:text="@string/book_price"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:elevation="10dp" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/book_btnGtSach"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="GioiThieuSach"
+                android:layout_marginTop="11dp"
+                android:backgroundTint="@color/white"
+                android:drawableEnd="@drawable/ic_eva_arrow_right_fill"
+                android:fontFamily="@font/googlesans_medium"
+                android:letterSpacing="0"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="18dp"
+                android:text="@string/book_btn_gtSachText"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/c_00204A"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/googlesans_regular"
+                android:lineSpacingMultiplier="1.4"
+
+                android:text="@string/book_gtsachtext"
+                android:textColor="@color/c_45505F"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/book_btnTacGia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/btn_chittiet_light"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="GioiThieuTacGia"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="18dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_medium"
+                        android:text="@string/book_btn_gtTgiaText"
+                        android:textColor="@color/c_00204A"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:text="@string/book_author"
+                        android:textColor="@color/c_00204A"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:drawableEndCompat="@drawable/ic_eva_arrow_right_fill" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/googlesans_regular"
+                android:lineSpacingMultiplier="1.4"
+                android:text="@string/book_gtTgiaText"
+                android:textColor="@color/c_45505F"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/book_btnDanhGia"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="@color/white"
+                android:drawableEnd="@drawable/ic_eva_arrow_right_fill"
+                android:fontFamily="@font/googlesans_medium"
+                android:letterSpacing="0"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="18dp"
+                android:text="@string/book_XepHangVaDanhGia"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/c_00204A"
+                android:textSize="18sp"
+                android:onClick="XemDanhGia"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/googlesans_medium"
+                    android:text="@string/book_tbSao"
+                    android:textColor="@color/c_00204A"
+                    android:textSize="56sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <com.example.appbookstore.SvgRatingBar
+                        android:id="@+id/book_5sao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="10dp"
+                        android:progressDrawable="@drawable/custom_user_rate"
+                        android:rating="4.3"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:isIndicator="true"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/book_SlDanhGia"
+                        android:textColor="@color/c_6000204A" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/book_top3DG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/googlesans_medium"
+                    android:text="@string/book_xephang"
+                    android:textColor="@color/c_00204A"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/googlesans_regular"
+                    android:text="@string/book_xephang_suynghi"
+                    android:textColor="@color/c_00204A"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <com.example.appbookstore.SvgRatingBar
+                android:id="@+id/user_ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:progressDrawable="@drawable/custom_ratingbar"
+                android:rating="0"
+                android:numStars="5"
+                android:stepSize="1"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/btn_vietDanhGia"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/googlesans_medium"
+                android:text="@string/btn_vietDanhGia"
+                android:textAllCaps="false"
+                android:textColor="@color/c_005792"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

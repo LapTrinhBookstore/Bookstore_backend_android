@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:paddingRight="20dp"
+        android:paddingLeft="10dp"
+        android:paddingVertical="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imageViewHinh"
+            android:scaleType="centerInside"
+            android:layout_width="55dp"
+            android:layout_height="80dp" />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textViewTen"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:text="Tạo Dựng Cuộc Sống Ý Ng..."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textViewNguoiDang"
+                android:textColor="#646464"
+                android:textSize="14dp"
+                android:text="Dale Carnegie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/imageButtonTrangThai"
+            android:layout_marginHorizontal="15dp"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <ImageButton
+            android:id="@+id/imageButtonTuyChon"
+            android:background="@null"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/options"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+    </LinearLayout>
+
+</LinearLayout>

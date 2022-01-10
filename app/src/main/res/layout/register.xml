@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Register"
+    android:background="@drawable/gradient_rg">
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tạo tài khoản"
+        android:textColor="#7D000000"
+        android:textSize="42dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tài khoản"
+        android:layout_below="@+id/textView30"
+        android:textColor="#6600204A"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="42dp"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="327dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView31"
+        android:background="@drawable/shape"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:layout_below="@+id/editTextTextPersonName4"
+        android:textColor="#6600204A"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="327dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView32"
+        android:background="@drawable/shape"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mật khẩu"
+        android:layout_below="@+id/editTextTextPersonName5"
+        android:textColor="#6600204A"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="327dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView33"
+        android:background="@drawable/shape"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận mật khẩu"
+        android:layout_below="@+id/editTextTextPersonName6"
+        android:textColor="#6600204A"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="327dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView34"
+        android:background="@drawable/shape"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="327dp"
+        android:layout_height="65dp"
+        android:text="Đăng ký"
+        android:layout_below="@+id/editTextTextPersonName7"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#00BBF0"
+        android:elevation="5dp"
+        android:shadowColor="#005792"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#EFFBFF"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:translationZ="5dp"/>
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đã có tài khoản?"
+        android:layout_below="@+id/button"
+        android:textColor="#6600204A"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="100dp"/>
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập ngay!"
+        android:layout_below="@+id/button"
+        android:layout_toRightOf="@+id/textView35"
+        android:textColor="#005792"
+        android:textSize="14dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5dp"/>
+
+</RelativeLayout>

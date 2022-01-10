@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dialog_change_email"
+    android:orientation="vertical"
+    android:background="@drawable/bg_white_corner_20">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Cập nhật email"
+        android:textColor="@color/textColorBlue"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/trans"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:background="@drawable/et_circle_15"
+        android:backgroundTint="@color/trans"
+        android:drawableRight="@drawable/ic_edit"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:text="davidnguyen@gmail.com"
+        android:textColor="@color/textColorBlue"
+        android:textStyle="bold"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/et_circle_15"
+        android:text="Cập nhật"
+        android:textAllCaps="false"
+        android:textColor="@color/lightBlue"
+        android:textStyle="bold"
+        app:backgroundTint="@color/colorLine"
+        android:layout_marginBottom="24dp"/>
+</LinearLayout>

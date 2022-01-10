@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="c_00204A">#00204A</color>
+    <color name="c_2000204A">#2000204A</color>
+    <color name="c_4000204A">#4000204A</color>
+    <color name="c_6000204A">#6000204A</color>
+    <color name="c_8000204A">#8000204A</color>
+    <color name="c_005792">#005792</color>
+    <color name="c_60000000">#60000000</color>
+    <color name="c_80000000">#80000000</color>
+    <color name="c_btn">#00BBF0</color>
+    <color name="c_15005792">#15005792</color>
+    <color name="c_1f1f1f">#1f1f1f</color>
+    <color name="c_F4900C">#F4900C</color>
+    <color name="c_DAA55E">#DAA55E</color>
+    <color name="c_45505F">#45505F</color>
+    <color name="c_668CA6">#668CA6</color>
+
+
+    <color name="lightBlue">#FFFFFFFF</color>
+    <color name="textColorBlue">#00204A</color>
+    <color name="colorStatusBar">#0070A9</color>
+    <color name="colorLine">#00BBF0</color>
+    <color name="trans">#0D000000 </color>
+    <color name="yellowCoin">#FFAC33 </color>
+    <color name="blueButton_profile">#005792</color>
+    <color name="colorMain">#2196F3</color>
+</resources>

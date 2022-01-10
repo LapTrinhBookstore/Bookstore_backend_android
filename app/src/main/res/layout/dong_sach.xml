@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <LinearLayout
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:paddingVertical="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textViewSTT"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:textColor="#000000"/>
+
+                <ImageView
+                    android:id="@+id/imageViewHinh"
+                    android:layout_width="62dp"
+                    android:layout_height="90dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/textViewTen"
+                            android:layout_weight="1"
+                            android:textColor="#000000"
+                            android:textSize="18dp"
+                            android:text="Tạo Dựng Cuộc Sống Ý Ng..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/textViewNguoiDang"
+                            android:layout_weight="1"
+                            android:textColor="#646464"
+                            android:textSize="14dp"
+                            android:text="Dale Carnegie"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/textViewLuotDoc"
+                            android:layout_weight="1"
+                            android:textSize="14dp"
+                            android:textColor="#646464"
+                            android:text="100 N lượt đọc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/textViewGia"
+                            android:layout_weight="1"
+                            android:textColor="#646464"
+                            android:textSize="14sp"
+                            android:text="57.000 đ"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>

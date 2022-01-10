@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Home">
+
+    <LinearLayout
+        android:id="@+id/layoutLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bookstore"
+            android:textColor="#2196F3"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonSearch"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#FFFFFF"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/icon_search"  />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dividerNgang"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutLogo"
+        android:background="?android:attr/listDivider" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerNoiDung"
+        android:layout_below="@+id/dividerNgang"
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/dividerNgangMenu"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/bottom_navigation"
+        android:background="?android:attr/listDivider" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@color/color_navigation"
+        app:itemTextColor="@color/color_navigation"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/menu_navigation">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>

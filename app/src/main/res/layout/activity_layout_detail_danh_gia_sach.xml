@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".layout_Detail_DanhGiaSach"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/danhGiaSach_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:title=" "
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_round_arrow_back" >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="2dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/book_avt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/demo"
+                        app:shapeAppearanceOverlay="@style/roundImage3dp"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="3dp" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@+id/cardView"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/book_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_medium"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="@string/book_name"
+                        android:textColor="@color/c_00204A"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/book_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:text="Đánh giá sách"
+                        android:textColor="@color/c_00204A"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_DangGia"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/googlesans_medium"
+                    android:text="Đăng"
+                    android:textAllCaps="false"
+                    android:textColor="@color/c_005792"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/user3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="50pt">
+
+                    <ImageView
+                        android:id="@+id/user3_avt"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="15dp" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user3_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/googlesans_regular"
+                    android:text="Thien Dang "
+                    android:textColor="@color/c_00204A"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <com.example.appbookstore.SvgRatingBar
+                android:id="@+id/danhGia_ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:progressDrawable="@drawable/custom_ratingbar"
+                android:rating="0"
+                android:numStars="5"
+                android:stepSize="1"
+                tools:ignore="SpeakableTextPresentCheck" />
+            <EditText
+                android:id="@+id/danhGia_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input_danh_gia"
+                android:layout_marginTop="28dp"
+                android:layout_marginHorizontal="18dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:minHeight="118dp"
+                android:ems="10"
+                android:textColor="@color/c_00204A"
+                android:textColorHint="@color/c_6000204A"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:maxLength="1000"
+                android:hint="Mô tả trải nghiệm của bạn (không bắt buộc)"
+                />
+            <TextView
+                android:id="@+id/danhGia_soKiTu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/c_6000204A"
+                android:layout_marginHorizontal="18dp"
+                android:text="0/1000"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

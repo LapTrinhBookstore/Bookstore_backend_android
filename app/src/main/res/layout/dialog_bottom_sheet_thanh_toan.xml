@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/googlesans_regular"
+        android:text="@string/app_name"
+        android:layout_marginHorizontal="20dp"
+        android:textAllCaps="true"
+        android:textColor="@color/c_8000204A"
+        android:textSize="16sp" />
+    <View
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="80dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/thanhToan_tenSach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/googlesans_medium"
+            android:text="@string/book_name"
+            android:textColor="@color/c_00204A"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/thanhToan_giaSach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/googlesans_medium"
+            android:text="@string/book_price"
+            android:textColor="@color/c_00204A"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="80dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/googlesans_medium"
+            android:text="Số dư trong TK"
+            android:textColor="@color/c_60000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/thanhToan_soDu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/googlesans_medium"
+            android:text="1.500.000 đ"
+            android:textColor="@color/c_00204A"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="80dp">
+
+        <CheckBox
+            android:id="@+id/thanhToan_soXu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:checked="true"
+            android:button="@drawable/checkbox_sd_xu"
+            android:fontFamily="@font/googlesans_medium"
+            android:text="  Dùng 300 xu"
+            android:textColor="@color/c_00204A"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/thanhTOan_tienGiam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/googlesans_medium"
+            android:text="-15.000 đ"
+            android:textColor="@color/c_F4900C"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="80dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/googlesans_medium"
+            android:text="Tổng tiền"
+            android:textColor="@color/c_60000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/thanhToan_tongTien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/googlesans_medium"
+            android:text="155.000 đ"
+            android:textColor="@color/c_00204A"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/thanhToan_btnThanhToan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="54dp"
+            android:background="@drawable/bg_btn"
+            android:fontFamily="@font/googlesans_bold"
+            android:text="Thanh toán"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:elevation="10dp" />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

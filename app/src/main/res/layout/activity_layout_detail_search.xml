@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/search_toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            app:title=" "
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_round_arrow_back">
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/book_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                app:queryHint="Tìm kiếm sách"
+                app:iconifiedByDefault="false"
+                app:searchIcon="@null"
+                android:textSize="18dp"
+                app:queryBackground="@color/white"
+                app:closeIcon="@drawable/ic_eva_close_outline"/>
+        </androidx.appcompat.widget.Toolbar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_searchHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

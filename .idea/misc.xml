@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.22777777777777777" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable-v24/img_circle.xml" value="0.14074074074074075" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/bg_btn_arrow_up_left.xml" value="0.14537037037037037" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/bg_btn_loc_danh_gia.xml" value="0.14537037037037037" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/bg_input_danh_gia.xml" value="0.19166666666666668" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/btn_circle.xml" value="0.19166666666666668" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/checkbox_sd_xu.xml" value="0.14537037037037037" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/circle_shadow.xml" value="0.14537037037037037" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/gradient.xml" value="0.16944444444444445" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/ic_akar_icons_check_box.xml" value="0.19166666666666668" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/ic_back_gray.xml" value="0.16944444444444445" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/ic_camera.xml" value="0.16944444444444445" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/linear_circle_gradient.xml" value="0.14074074074074075" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/tv_white_corner_5.xml" value="0.14537037037037037" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_add_bank_account.xml" value="0.16666666666666666" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_bank_account.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_change_information_personal.xml" value="0.14666666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_details_personal_info.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_dialog_change_email.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_dialog_change_phonenumber.xml" value="0.1675925925925926" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_dialog_enter_newpassword.xml" value="0.14666666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_dialog_enter_old_password.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_exchange_coins.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_layout_detail1.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_layout_detail_danh_gia_sach.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_layout_detail_gioi_thieu_sach.xml" value="0.17552083333333332" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_layout_detail_gttac_gia.xml" value="0.17552083333333332" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_layout_detail_sach_tk.xml" value="0.1537037037037037" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_layout_detail_search.xml" value="0.17552083333333332" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_profile_bookstore.xml" value="0.18706293706293706" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/dialog_bottom_sheet_thanh_toan.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/dong_sach.xml" value="0.1537037037037037" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/fragment_home.xml" value="0.1537037037037037" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/fragment_library.xml" value="0.17552083333333332" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/fragment_popular.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/home.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/item_danh_gia.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/item_sach.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/item_seach.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/read_book.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/register.xml" value="0.14666666666666667" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/menu/detail1_menu.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/menu/menu_navigation.xml" value="0.1" />
+        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/AppBookstore2/app/src/main/res/layout/activity_layout_detail1.xml" value="0.22" />
+        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/AppBookstore2/app/src/main/res/layout/activity_layout_detail_search.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/AppBookstore2/app/src/main/res/layout/activity_main.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/AppBookstore2/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/AppBookstore2/app/src/main/res/layout/fragment_option.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/AppBookstore2/app/src/main/res/layout/fragment_popular.xml" value="0.2" />
+        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/AppBookstore2/app/src/main/res/layout/home.xml" value="0.21" />
+        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/AppBookstore2/app/src/main/res/layout/read_book.xml" value="0.10182370820668693" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/drawable/gradient.xml" value="0.215625" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/drawable/gradient_rg.xml" value="0.215625" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/drawable/my_gradient_headerprofile.xml" value="0.215625" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/activity_details_personal_info.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/activity_exchange_coins.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/activity_layout_detail1.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/activity_profile_bookstore.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/dialog_bottom_sheet_thanh_toan.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/fragment_home.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/read_book.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/layout/register.xml" value="0.19947916666666668" />
+        <entry key="app/src/main/res/drawable-v24/gradient_rg.xml" value="0.12447916666666667" />
+        <entry key="app/src/main/res/drawable/bg_btn.xml" value="0.21574074074074073" />
+        <entry key="app/src/main/res/drawable/btn_shape.xml" value="0.2212962962962963" />
+        <entry key="app/src/main/res/drawable/gradient_rg.xml" value="0.21574074074074073" />
+        <entry key="app/src/main/res/layout/activity_add_bank_account.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_bank_account.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_change_infomation_personal.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_change_information_personal.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_details_personal_info.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_dialog_change_email.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_dialog_change_phonenumber.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_dialog_enter_newpassword.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_dialog_enter_old_password.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_exchange_coins.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_layout_detail1.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_layout_detail_danh_gia_sach.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_layout_detail_gioi_thieu_sach.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_layout_detail_gttac_gia.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_layout_detail_sach_tk.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_layout_detail_search.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_layout_detail_xem_danh_gia.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_profile_bookstore.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/detail.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/dialog_bottom_sheet_thanh_toan.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/dong_sach.xml" value="0.12817028985507245" />
+        <entry key="app/src/main/res/layout/dong_thuvien.xml" value="0.12817028985507245" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.34984159278963" />
+        <entry key="app/src/main/res/layout/fragment_library.xml" value="0.12817028985507245" />
+        <entry key="app/src/main/res/layout/fragment_option.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_popular.xml" value="0.12817028985507245" />
+        <entry key="app/src/main/res/layout/home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_danh_gia.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/item_sach.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/item_seach.xml" value="0.10790273556231003" />
+        <entry key="app/src/main/res/layout/read_book.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/register.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/menu_navigation.xml" value="0.221875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

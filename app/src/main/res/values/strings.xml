@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">AppBookstore</string>
+
+    <string name="book_name">Hẹn anh lúc nửa đêm</string>
+    <string name="book_author">Nguyễn Nga</string>
+    <string name="book_nxb">Viết Lách VN</string>
+    <string name="book_star">4.3</string>
+    <string name="book_star_text">4 N bài đánh giá</string>
+    <string name="book_category_text">Sách điện tử</string>
+    <string name="book_page">120</string>
+    <string name="book_page_text">Trang</string>
+    <string name="book_price">170.000 đ</string>
+    <string name="book_btn_gtSachText">Giới thiệu về sách điện tử này</string>
+    <string name="book_gtsachtext">Một ma trinh nữ chết oan phải tìm ra kẻ sát nhân trước kỳ hạn 49 ngày nếu không sẽ thành cô hồn mãi mãi...</string>
+    <string name="book_btn_gtTgiaText">Giới thiệu về tác giả</string>
+    <string name="book_gtTgiaText">Nguyễn Nga tốt nghiệp khoa Báo chí - Truyền thông trường ĐH Khoa học Xã hội và Nhân văn TP.HCM...</string>
+    <string name="book_XepHangVaDanhGia">Xếp hạng và đánh giá</string>
+    <string name="book_tbSao">4,3</string>
+    <string name="book_SlDanhGia">4805</string>
+    <string name="book_xephang">Xếp hạng sách điện tử này</string>
+    <string name="book_xephang_suynghi">Cho người khác biết suy nghĩ của bạn</string>
+    <string name="btn_vietDanhGia">Viết đánh giá</string>
+    <string name="GTSach_chiTiet_gtSach">Một ma trinh nữ chết oan phải tìm ra kẻ sát nhân trước kỳ hạn 49 ngày nếu không sẽ thành cô hồn mãi mãi.\n\nCô chạy trốn những cuộc săn đuổi điên cuồng của gã thần y chuyên bắt ma, trừ tà. Nhưng lại rơi vào bẫy tình yêu của nhà ngoại cảm có quá khứ đen tối, bí ẩn.\n\nMột ma trinh nữ chết oan phải tìm ra kẻ sát hại mình trước 49 ngày với tính cách vô cùng hậu đậu.\n\nMột chàng trai trẻ tìm mọi cách che giấu khả năng “ngoại cảm” với người âm.\n\nMột thần y thiên tài vừa chữa bệnh, vừa bắt ma trừ tà nhưng lại có hành tung vô cùng bí ẩn.\n\nVà một số các nhân vật phụ khác trong truyện.\n\nLiệu ai trong số họ mới là kẻ SÁT NHÂN thật sự, chuyện tình yêu lay động mọi trái tim đan xen phá án, truy tìm kẻ thủ ác bí ẩn. Yếu tố trinh thám kết hợp ma mị, lãng mạn tạo nên sự lôi cuốn khiến bạn không thể rời khỏi trang sách.</string>
+    <string name="GTSach_ttSach">Thông tin về sách</string>
+    <string name="GTSach_nxb">Nhà xuất bản</string>
+    <string name="GTSach_theLoai">Thể loại</string>
+    <string name="GTSach_ngonNgu">Ngôn ngữ</string>
+    <string name="GTSach_isbn">ISBN</string>
+    <string name="GTSach_sotrang">Trang</string>
+    <string name="GTSach_ngayXb">Xuất bản vào</string>
+    <string name="GTTacGia_chiTietGTTacGia">Nguyễn Nga tốt nghiệp khoa Báo chí - Truyền thông, trường ĐH Khoa học Xã hội và Nhân văn TP.HCM.\n\nNgoài công việc biên kịch, nhà văn, tác giả còn là blogger, sống và làm việc tại TP.HCM.\n\n Một số tác phẩm của Nguyễn Nga: phim Tía ơi đừng say, phim Thầy đổi nghề, truyện ngắn Món nợ, Đời bong bóng, Gã keo kiệt (tạp chí Tiếp thị và Gia đình), truyện ngắn Đêm trăng đời người, Khách trọ, Tìm thấy thiên đường (báo Phụ nữ TP.HCM), ...\n\nNgoài viết truyện ma, Nguyễn Nga còn viết khá nhiều truyện ngắn về tình yêu, hôn nhân, gia đình, cuộc sống. Các bạn có thể tìm truyện đọc và đừng quên đánh giá cho tác giả nhé! Chân thành cảm ơn!</string>
+
+    <string-array name="bank_name_arrays">
+        <item>Chọn một ngân hàng</item>
+        <item>VietcomBank</item>
+        <item>AgriBank</item>
+        <item>VietinBank</item>
+        <item>TechcomBank</item>
+        <item>SacomBank</item>
+        <item>MB Bank</item>
+        <item>VPBank</item>
+    </string-array>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundImage10dp">
+        <item name="cornerSize">10dp</item>
+    </style>
+    <style name="roundImage3dp">
+        <item name="cornerSize">3dp</item>
+    </style>
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_thanh_toan</item>
+    </style>
+
+    <style name="AlertDialog" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="android:textColorPrimary">@color/c_00204A</item>
+        <item name="android:colorAccent">@color/c_005792</item>
+    </style>
+</resources>

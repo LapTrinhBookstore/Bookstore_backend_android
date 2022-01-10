@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".layout_Detail_GioiThieuSach"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/gioiThieuSach_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/gioiThieuSach_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:title=" "
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_round_arrow_back" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="8dp"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="2dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/book_avt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/demo"
+                        app:shapeAppearanceOverlay="@style/roundImage3dp"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="3dp" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/book_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/googlesans_medium"
+                        android:text="@string/book_name"
+                        android:textColor="@color/c_00204A"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/book_author"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:text="Chi tiết"
+                        android:textColor="@color/c_00204A" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:id="@+id/GTSach"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/googlesans_medium"
+                android:text="@string/book_btn_gtSachText"
+                android:textColor="@color/c_00204A"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/googlesans_regular"
+                android:lineSpacingMultiplier="1.4"
+
+                android:text="@string/GTSach_chiTiet_gtSach"
+                android:textColor="@color/c_00204A"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="64dp"
+                android:background="#EEEEEE"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/googlesans_medium"
+                android:text="@string/GTSach_ttSach"
+                android:textColor="@color/c_00204A"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/GTSach_ttsach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="64dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_45505F"
+                        android:text="@string/GTSach_nxb"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/GTSach_nxb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_00204A"
+                        android:text="Viết lách VN"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_45505F"
+                        android:text="@string/GTSach_ngayXb"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/GTSach_ngayXb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_00204A"
+                        android:text="5 thg 7, 2019"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_45505F"
+                        android:text="@string/GTSach_sotrang"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/GTSach_sotrang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_00204A"
+                        android:text="120"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_45505F"
+                        android:text="@string/GTSach_isbn"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/GTSach_isbn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_00204A"
+                        android:text="9780007322602"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_45505F"
+                        android:text="@string/GTSach_ngonNgu"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/GTSach_ngonNgu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_00204A"
+                        android:text="Tiếng Viêt"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_45505F"
+                        android:text="@string/GTSach_theLoai"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/GTSach_theLoai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesans_regular"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_00204A"
+                        android:text="Thần bí, Văn học viễn tưởng"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
