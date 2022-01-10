@@ -2,7 +2,7 @@ package com.example.appbookstore;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Users {
+public class UsersModel {
     private int id;
     private String name;
     private String email;
@@ -16,7 +16,7 @@ public class Users {
     private String created_at;
     private String updated_at;
 
-    public Users(int id, String name, String email, String password, String email_verified_at, String phoneNumber, String dateOfBirth, int gender, String avatarImg, int numberOfCoins, String created_at, String updated_at) {
+    public UsersModel(int id, String name, String email, String password, String email_verified_at, String phoneNumber, String dateOfBirth, int gender, String avatarImg, int numberOfCoins, String created_at, String updated_at) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -31,7 +31,7 @@ public class Users {
         this.updated_at = updated_at;
     }
 
-    public Users() {
+    public UsersModel() {
 
     }
 

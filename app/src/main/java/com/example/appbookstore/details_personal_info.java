@@ -1,24 +1,18 @@
 package com.example.appbookstore;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.appbookstore.api.ApiService;
-
-import java.security.PrivateKey;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -76,23 +70,23 @@ public class details_personal_info extends AppCompatActivity {
     // call api
     private void getListUsers(){
         ApiService.apiService.getUsers(1)
-                .enqueue(new Callback<Users>() {
+                .enqueue(new Callback<UsersModel>() {
                     @Override
-                    public void onResponse(Call<Users> call, Response<Users> response) {
-                        Users users = response.body();
-                        if (users != null){
-                            tvDetailsFullName1.setText(users.getName());
-                            tvDetailsFullName2.setText(users.getName());
-                            if(users.getGender() == 1){
-                                tvDetailsGender.setText("Nam");
-                            } else {tvDetailsGender.setText("Nữ");}
-                            tvDetailsDOB.setText(users.getDateOfBirth());
-                            tvDetailsEmail.setText(users.getEmail());
-                            tvDetailsPhoneNumber.setText(users.getPhoneNumber());
+                    public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
+                        UsersModel usersModel = response.body();
+                        if (usersModel != null){
+                            tvDetailsFullName1.setText(usersModel.getName());
+                            tvDetailsFullName2.setText(usersModel.getName());
+                            if(usersModel.getGender() == 0){
+                                tvDetailsGender.setText("Nữ");
+                            } else {tvDetailsGender.setText("Nam");}
+                            tvDetailsDOB.setText(usersModel.getDateOfBirth());
+                            tvDetailsEmail.setText(usersModel.getEmail());
+                            tvDetailsPhoneNumber.setText(usersModel.getPhoneNumber());
                         }
                     }
                     @Override
-                    public void onFailure(Call<Users> call, Throwable t) {
+                    public void onFailure(Call<UsersModel> call, Throwable t) {
                         tvDetailsFullName1.setText("Lỗi!");
                     }
                 });

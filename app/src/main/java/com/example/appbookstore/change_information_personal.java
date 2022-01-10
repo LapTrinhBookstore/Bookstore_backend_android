@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,6 +29,9 @@ public class change_information_personal extends AppCompatActivity {
     private EditText etFullName;
     private EditText etDoB;
     private Button btnSave;
+    private CheckBox checkBoxMale;
+    private CheckBox checkBoxFemale;
+    private int gender = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -41,14 +46,41 @@ public class change_information_personal extends AppCompatActivity {
         // mapping
         etFullName = (EditText) findViewById(R.id.changeInfo_fullName);
         etDoB = (EditText) findViewById(R.id.changeInfo_DoB);
+        checkBoxMale = (CheckBox) findViewById(R.id.changeInfo_checkBoxMale);
+        checkBoxFemale = (CheckBox) findViewById(R.id.changeInfo_checkBoxFeMale);
         btnSave = (Button) findViewById(R.id.changeInfo_Submit);
+
         // call api
-        getListUsers(1);
+        getUsers(1);
         // update data
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*callApiUpdate(1);*/
+                UsersModel usersModel = new UsersModel();
+                usersModel.setName(String.valueOf(etFullName.getText()));
+                usersModel.setDateOfBirth(String.valueOf(etDoB.getText()));
+                checkBoxMale.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean checked = ((CheckBox) v).isChecked();
+                        if (checked){
+                            gender = 1;
+                        }
+                    }
+                });
+
+                checkBoxFemale.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean checked = ((CheckBox) v).isChecked();
+                        if (checked){
+                            gender = 0;
+                        }
+                    }
+                });
+                usersModel.setGender(gender);
+                usersModel.setId(1);
+                callApiUpdateInfoPersonal(usersModel);
             }
         });
     }
@@ -76,38 +108,40 @@ public class change_information_personal extends AppCompatActivity {
     }
 
     // call api
-    private void getListUsers(int id){
+    private void getUsers(int id){
         ApiService.apiService.getUsers(id)
-                .enqueue(new Callback<Users>() {
+                .enqueue(new Callback<UsersModel>() {
                     @Override
-                    public void onResponse(Call<Users> call, Response<Users> response) {
-                        Users users = response.body();
-                        if (users != null){
-                            etFullName.setText(users.getName());
-                            etDoB.setText(users.getDateOfBirth());
+                    public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
+                        UsersModel usersModel = response.body();
+                        if (usersModel != null){
+                            etFullName.setText(usersModel.getName());
+                            etDoB.setText(usersModel.getDateOfBirth());
                         }
                     }
                     @Override
-                    public void onFailure(Call<Users> call, Throwable t) {
+                    public void onFailure(Call<UsersModel> call, Throwable t) {
                         Toast.makeText(change_information_personal.this, "Lỗi", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
-    /*// call api update data
-    private void callApiUpdate(int id){
-        ApiService.apiService.updateUser(id).enqueue(new Callback<Users>() {
+    // call api update information personal
+    private void callApiUpdateInfoPersonal(UsersModel usersModel){
+        ApiService.apiService.updateDetails(usersModel).enqueue(new Callback<Integer>() {
             @Override
-            public void onResponse(Call<Users> call, Response<Users> response) {
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(change_information_personal.this, "Thành Công", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(change_information_personal.this, details_personal_info.class);
+                    startActivity(intent);
                 }
             }
-
             @Override
-            public void onFailure(Call<Users> call, Throwable t) {
+            public void onFailure(Call<Integer> call, Throwable t) {
                 Toast.makeText(change_information_personal.this, "Lỗi", Toast.LENGTH_SHORT).show();
             }
         });
-    }*/
+    }
 }
