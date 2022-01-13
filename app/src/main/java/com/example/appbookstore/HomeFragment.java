@@ -6,72 +6,160 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.appbookstore.adapter.HomeGoiYAdapter;
+import com.example.appbookstore.adapter.HomeTheLoaiAdapter;
+import com.example.appbookstore.model.HomeBook;
+import com.example.appbookstore.my_interface.IClickItemBookListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private LinearLayout llBook1;
-    private LinearLayout llBook2;
-    private LinearLayout llBook3;
-    private LinearLayout llBook4;
-    private LinearLayout llBook5;
-    private LinearLayout llBook6;
+    private RecyclerView rcvTheLoai;
+    private RecyclerView rcvviewGoiY;
+
+    private HomeTheLoaiAdapter theLoaiAdapter;
+    private HomeGoiYAdapter goiYAdapter;
+
+    List<HomeBook> listGY;
+    List<HomeBook> listTL;
+
+    private String urlGetData = "https://bookstoreandroid.000webhostapp.com/bookstore/product.php";
+    private String urlGetTheLoai = "https://bookstoreandroid.000webhostapp.com/bookstore/sachlyki.php";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        llBook1 = (LinearLayout) view.findViewById(R.id.layoutBook1);
-        llBook1.setOnClickListener(new View.OnClickListener() {
+
+        //Anh xa
+        rcvTheLoai = view.findViewById(R.id.recyclerviewTheLoai);
+        rcvviewGoiY = view.findViewById(R.id.recyclerviewGoiY);
+
+        //Load sach theo the loai
+        listTL = new ArrayList<>();
+        theLoaiAdapter = new HomeTheLoaiAdapter();
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        //myRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rcvTheLoai.setLayoutManager(linearLayoutManager);
+        rcvTheLoai.setFocusable(false);
+        rcvTheLoai.setNestedScrollingEnabled(false);
+        theLoaiAdapter.setData(listTL, new IClickItemBookListener() {
             @Override
-            public void onClick(View view) {
-                layoutClicked();
+            public void onClichItemBook(HomeBook book) {
+                onCliclToDetail(book);
             }
         });
-        llBook2 = (LinearLayout) view.findViewById(R.id.layoutBook2);
-        llBook2.setOnClickListener(new View.OnClickListener() {
+        rcvTheLoai.setAdapter(theLoaiAdapter);
+        GetDataTheLoai(urlGetTheLoai);
+
+        //Load sach goi y danh cho ban
+        goiYAdapter = new HomeGoiYAdapter();
+        listGY = new ArrayList<>();
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
+        rcvviewGoiY.setLayoutManager(gridLayoutManager);
+        rcvviewGoiY.setFocusable(false);
+        rcvviewGoiY.setNestedScrollingEnabled(false);
+        goiYAdapter.setData(listGY, new IClickItemBookListener() {
             @Override
-            public void onClick(View view) {
-                layoutClicked();
+            public void onClichItemBook(HomeBook book) {
+                onCliclToDetail(book);
             }
         });
-        llBook3 = (LinearLayout) view.findViewById(R.id.layoutBook3);
-        llBook3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                layoutClicked();
-            }
-        });
-        llBook4 = (LinearLayout) view.findViewById(R.id.layoutBook4);
-        llBook4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                layoutClicked();
-            }
-        });
-        llBook5 = (LinearLayout) view.findViewById(R.id.layoutBook5);
-        llBook5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                layoutClicked();
-            }
-        });
-        llBook6 = (LinearLayout) view.findViewById(R.id.layoutBook6);
-        llBook6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                layoutClicked();
-            }
-        });
+        rcvviewGoiY.setAdapter(goiYAdapter);
+        GetData(urlGetData);
+
+
         return view;
     }
-    public void layoutClicked() {
+
+    private void GetData(String url){
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        for (int i = 0; i < response.length(); i++){
+                            try {
+                                JSONObject object = response.getJSONObject(i);
+                                listGY.add(new HomeBook(
+                                        object.getString("productImg"),
+                                        object.getString("name"),
+                                        object.getInt("price")
+                                ));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        goiYAdapter.notifyDataSetChanged();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity(), "Loi!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
+    }
+    private void GetDataTheLoai(String url){
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        for (int i = 0; i < response.length(); i++){
+                            try {
+                                JSONObject object = response.getJSONObject(i);
+                                listTL.add(new HomeBook(
+                                        object.getString("productImg"),
+                                        object.getString("name"),
+                                        object.getInt("price")
+                                ));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        theLoaiAdapter.notifyDataSetChanged();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity(), "Loi!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
+    }
+    private void onCliclToDetail(HomeBook book){
         Intent intent = new Intent(getActivity(), layout_Detail1.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("book", book);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }
