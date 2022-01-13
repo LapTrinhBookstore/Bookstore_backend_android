@@ -1,4 +1,4 @@
-package com.example.appbookstore;
+package com.example.appbookstore.model;
 
 public class Book {
     private int stt;

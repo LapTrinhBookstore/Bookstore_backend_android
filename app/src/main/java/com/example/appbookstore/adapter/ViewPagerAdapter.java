@@ -1,9 +1,14 @@
-package com.example.appbookstore;
+package com.example.appbookstore.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+
+import com.example.appbookstore.HomeFragment;
+import com.example.appbookstore.LibraryFragment;
+import com.example.appbookstore.OptionFragment;
+import com.example.appbookstore.PopularFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
