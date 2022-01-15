@@ -159,9 +159,10 @@ public class HomeFragment extends Fragment {
     }
     private void onCliclToDetail(HomeBook book){
         Intent intent = new Intent(getActivity(), layout_Detail1.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("book", book);
-        intent.putExtras(bundle);
+//        Bundle bundle = new Bundle();
+//        bundle.putSerializable("book", book);
+        intent.putExtra("idbook", book.getId());
+        intent.putExtra("iduser", 1);
         startActivity(intent);
     }
 }

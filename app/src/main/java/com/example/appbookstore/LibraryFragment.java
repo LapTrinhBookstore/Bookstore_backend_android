@@ -118,9 +118,8 @@ public class LibraryFragment extends Fragment {
     }
     private void onCliclToDetail(LibraryBook book){
         Intent intent = new Intent(getActivity(), layout_Detail1.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("book", book);
-        intent.putExtras(bundle);
+        intent.putExtra("idbook", book.getIdProduct());
+        intent.putExtra("iduser", 1);
         startActivity(intent);
     }
     private List<SapXep> getListSapXep(){
