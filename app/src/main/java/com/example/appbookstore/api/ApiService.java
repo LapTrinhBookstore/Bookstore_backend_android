@@ -15,9 +15,12 @@ import retrofit2.http.Path;
 public interface ApiService {
 
     Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+    String urlThuan = "http://192.168.178.48/Bookstore_android/public/api/";
+    String urlThien = "http://192.168.1.7/android/Bookstore/public/api/";
+
 
     ApiService apiService = new Retrofit.Builder()
-            .baseUrl("http://192.168.178.48/Bookstore_android/public/api/")
+            .baseUrl(urlThien)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiService.class);
