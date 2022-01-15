@@ -73,7 +73,7 @@ public class PopularBookAdapter extends BaseAdapter {
         try {
             PopularBook book = bookList.get(i);
             try {
-                String url = "https://bookstoreandroid.000webhostapp.com/bookstore2/image/" + book.getAnh();
+                String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + book.getAnh();
                 new LoadImageInternet(holder.imgHinh).execute(url);
             }catch (Exception e){
                 //holder.imgAnh.setImageResource(R.drawable.th1);

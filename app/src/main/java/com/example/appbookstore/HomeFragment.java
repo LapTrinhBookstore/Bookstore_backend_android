@@ -45,8 +45,9 @@ public class HomeFragment extends Fragment {
     List<HomeBook> listGY;
     List<HomeBook> listTL;
 
-    private String urlGetData = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachGoiY.php";
-    private String urlGetTheLoai = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachTheLoai.php?idcategory=1";
+    //private String urlGetData = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachGoiY.php";
+    private String urlGetData = "http://192.168.1.3/Bookstore_android/public/bookstore/getSachGoiY.php";
+    private String urlGetTheLoai = "http://192.168.1.3/Bookstore_android/public/bookstore/getSachTheLoai.php?idcategory=1";
 
     @Nullable
     @Override
