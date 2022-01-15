@@ -23,6 +23,7 @@
             android:paddingVertical="3dp"
             android:text="Bán chạy nhất"
             android:textColor="#2196F3"
+            android:background="?android:attr/selectableItemBackground"
             android:textSize="16sp" />
         <View
             android:id="@+id/viewKeDoc"
@@ -39,6 +40,7 @@
             android:paddingVertical="3dp"
             android:text="Miễn phí phổ biến"
             android:textColor="@color/black"
+            android:background="?android:attr/selectableItemBackground"
             android:textSize="16sp" />
     </LinearLayout>
     <View

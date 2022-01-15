@@ -45,8 +45,8 @@ public class HomeFragment extends Fragment {
     List<HomeBook> listGY;
     List<HomeBook> listTL;
 
-    private String urlGetData = "https://bookstoreandroid.000webhostapp.com/bookstore/product.php";
-    private String urlGetTheLoai = "https://bookstoreandroid.000webhostapp.com/bookstore/sachlyki.php";
+    private String urlGetData = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachGoiY.php";
+    private String urlGetTheLoai = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachTheLoai.php?idcategory=1";
 
     @Nullable
     @Override
@@ -105,6 +105,7 @@ public class HomeFragment extends Fragment {
                             try {
                                 JSONObject object = response.getJSONObject(i);
                                 listGY.add(new HomeBook(
+                                        object.getInt("id"),
                                         object.getString("productImg"),
                                         object.getString("name"),
                                         object.getInt("price")
@@ -135,6 +136,7 @@ public class HomeFragment extends Fragment {
                             try {
                                 JSONObject object = response.getJSONObject(i);
                                 listTL.add(new HomeBook(
+                                        object.getInt("id"),
                                         object.getString("productImg"),
                                         object.getString("name"),
                                         object.getInt("price")

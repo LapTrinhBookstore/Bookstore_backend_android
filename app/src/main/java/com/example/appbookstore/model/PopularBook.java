@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 public class PopularBook implements Serializable {
     private int stt;
-    private String id;
+    private int id;
     private String anh;
     private String title;
     private String publisher;
     private int view;
     private int price;
 
-    public PopularBook(int stt, String id, String anh, String title, String publisher, int view, int price) {
+    public PopularBook(int stt, int id, String anh, String title, String publisher, int view, int price) {
         this.stt = stt;
         this.id = id;
         this.anh = anh;
@@ -21,11 +21,11 @@ public class PopularBook implements Serializable {
         this.price = price;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
