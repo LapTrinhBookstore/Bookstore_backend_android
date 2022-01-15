@@ -8,25 +8,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.appbookstore.R;
-import com.example.appbookstore.model.BookLibrary;
+import com.example.appbookstore.model.PopularBook;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Locale;
 
-public class BookLibraryAdapter extends BaseAdapter {
+public class PopularBookAdapter extends BaseAdapter {
     private Context context;
     private int layout;
-    private List<BookLibrary> bookList;
+    private List<PopularBook> bookList;
 
-    public BookLibraryAdapter(Context context, int layout, List<BookLibrary> bookList) {
+    public PopularBookAdapter(Context context, int layout, List<PopularBook> bookList) {
         this.context = context;
         this.layout = layout;
         this.bookList = bookList;
@@ -49,8 +49,7 @@ public class BookLibraryAdapter extends BaseAdapter {
 
     private class ViewHolder{
         ImageView imgHinh;
-        TextView txtTen, txtTacGia;
-        ImageView ibtAn;
+        TextView txtSTT, txtTen, txtNguoiDang, txtLuotDoc, txtGia;
     }
 
     @Override
@@ -61,34 +60,42 @@ public class BookLibraryAdapter extends BaseAdapter {
             view = inflater.inflate(layout, null);
             holder = new ViewHolder();
             //anh xa view
+            holder.txtSTT = (TextView) view.findViewById(R.id.textViewSTT);
             holder.txtTen = (TextView) view.findViewById(R.id.textViewTen);
-            holder.txtTacGia = (TextView) view.findViewById(R.id.textViewNguoiDang);
+            holder.txtNguoiDang = (TextView) view.findViewById(R.id.textViewNguoiDang);
+            holder.txtLuotDoc = (TextView) view.findViewById(R.id.textViewLuotDoc);
+            holder.txtGia = (TextView) view.findViewById(R.id.textViewGia);
             holder.imgHinh = (ImageView) view.findViewById(R.id.imageViewHinh);
-            holder.ibtAn = (ImageView) view.findViewById(R.id.imageButtonAn);
             view.setTag(holder);
         }else {
             holder = (ViewHolder) view.getTag();
         }
         try {
-            BookLibrary book = bookList.get(i);
-            String ten = book.getTen();
-            if(ten.length() > 65)
-                ten = ten.substring(0, 63) + "...";
-            holder.txtTen.setText(ten);
+            PopularBook book = bookList.get(i);
             try {
-                String url = "https://bookstoreandroid.000webhostapp.com/bookstore/image/" + book.getHinh();
+                String url = "https://bookstoreandroid.000webhostapp.com/bookstore2/image/" + book.getAnh();
                 new LoadImageInternet(holder.imgHinh).execute(url);
             }catch (Exception e){
                 //holder.imgAnh.setImageResource(R.drawable.th1);
             }
-            String tacGia = book.getTacGia();
-            tacGia = tacGia.substring(0, tacGia.length()-2);
-            holder.txtTacGia.setText(tacGia);
-
+            holder.txtSTT.setText(String.valueOf(book.getStt()));
+            String ten = book.getTitle();
+            if(ten.length() > 27)
+                ten = ten.substring(0, 25) + "...";
+            holder.txtTen.setText(ten);
+            holder.txtNguoiDang.setText(book.getPublisher());
+            String luotdoc = String.format(Locale.US, "%,d", book.getView()).replace(',', '.');
+            holder.txtLuotDoc.setText(luotdoc + " lượt đọc");
+            int gia = book.getPrice();
+            if(gia == 0){
+                holder.txtGia.setText("Miễn phí");
+            }else{
+                String str = String.format(Locale.US, "%,d", gia).replace(',', '.');
+                holder.txtGia.setText(str + " đ");
+            }
         } catch (Exception e){
 
         }
-
         return view;
     }
     public Bitmap loadImageInternet(String imageUrl) {
@@ -132,33 +139,4 @@ public class BookLibraryAdapter extends BaseAdapter {
             bmImage.setImageBitmap(bitmap);
         }
     }
-//    private void updateAn(String url, String productID, String userID, int status){
-//        RequestQueue requestQueue = Volley.newRequestQueue(context);
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        String urlGetLibrary = "https://bookstoreandroid.000webhostapp.com/bookstore/getthuvien.php?iduser=US00000001&status=2";
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(context, "Xãy ra lỗi!", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//        ){
-//            @Nullable
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String, String> params = new HashMap<>();
-//                params.put("productID", productID);
-//                params.put("userID", userID);
-//                params.put("status", String.valueOf(status));
-//
-//                return params;
-//            }
-//        };
-//        requestQueue.add(stringRequest);
-//    }
 }
