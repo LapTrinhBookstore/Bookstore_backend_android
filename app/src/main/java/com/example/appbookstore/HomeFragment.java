@@ -47,6 +47,7 @@ public class HomeFragment extends Fragment {
 
     private String urlGetData = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachGoiY.php";
     private String urlGetTheLoai = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachTheLoai.php?idcategory=1";
+//    private String urlGetTheLoai = "https://192.168.1.7/android/Bookstore/public/bookstore/getSachTheLoai.php?idcategory=1";
 
     @Nullable
     @Override
