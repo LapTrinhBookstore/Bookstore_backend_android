@@ -36,7 +36,7 @@ public class LibraryFragment extends Fragment {
     ArrayList<LibraryBook> bookArrayList;
     LibraryBookAdapter adapter;
     private SapXepAdapter sapXepAdapter;
-    private String urlGetLibrary = "https://bookstoreandroid.000webhostapp.com/bookstore2/getThuVien.php?iduser=1&sx=";
+    private String urlGetLibrary = "http://192.168.1.3/Bookstore_android/public/bookstore/getThuVien.php?iduser=1&sx=";
     private Spinner spnSapXep;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -118,9 +118,8 @@ public class LibraryFragment extends Fragment {
     }
     private void onCliclToDetail(LibraryBook book){
         Intent intent = new Intent(getActivity(), layout_Detail1.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("book", book);
-        intent.putExtras(bundle);
+        intent.putExtra("idbook", book.getIdProduct());
+        intent.putExtra("iduser", 1);
         startActivity(intent);
     }
     private List<SapXep> getListSapXep(){

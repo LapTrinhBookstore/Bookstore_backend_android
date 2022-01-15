@@ -45,9 +45,10 @@ public class HomeFragment extends Fragment {
     List<HomeBook> listGY;
     List<HomeBook> listTL;
 
-    private String urlGetData = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachGoiY.php";
-    private String urlGetTheLoai = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachTheLoai.php?idcategory=1";
-//    private String urlGetTheLoai = "https://192.168.1.7/android/Bookstore/public/bookstore/getSachTheLoai.php?idcategory=1";
+    //private String urlGetData = "https://bookstoreandroid.000webhostapp.com/bookstore2/getSachGoiY.php";
+    private String urlGetData = "http://192.168.1.3/Bookstore_android/public/bookstore/getSachGoiY.php";
+    private String urlGetTheLoai = "http://192.168.1.3/Bookstore_android/public/bookstore/getSachTheLoai.php?idcategory=1";
+
 
     @Nullable
     @Override
@@ -160,9 +161,10 @@ public class HomeFragment extends Fragment {
     }
     private void onCliclToDetail(HomeBook book){
         Intent intent = new Intent(getActivity(), layout_Detail1.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("book", book);
-        intent.putExtras(bundle);
+//        Bundle bundle = new Bundle();
+//        bundle.putSerializable("book", book);
+        intent.putExtra("idbook", book.getId());
+        intent.putExtra("iduser", 1);
         startActivity(intent);
     }
 }
