@@ -49,7 +49,7 @@ public class HomeTheLoaiAdapter extends RecyclerView.Adapter<HomeTheLoaiAdapter.
             return;
         }
         try {
-            String url = "https://bookstoreandroid.000webhostapp.com/bookstore2/image/" + book.getAnh();
+            String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + book.getAnh();
             new LoadImageInternet(holder.imgAnh).execute(url);
         }catch (Exception e){
             //holder.imgAnh.setImageResource(R.drawable.th1);
