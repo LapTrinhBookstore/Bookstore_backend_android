@@ -21,12 +21,12 @@ import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 
-public class BookAdapter extends BaseAdapter {
+public class PopularBookAdapter extends BaseAdapter {
     private Context context;
     private int layout;
     private List<PopularBook> bookList;
 
-    public BookAdapter(Context context, int layout, List<PopularBook> bookList) {
+    public PopularBookAdapter(Context context, int layout, List<PopularBook> bookList) {
         this.context = context;
         this.layout = layout;
         this.bookList = bookList;
@@ -73,7 +73,7 @@ public class BookAdapter extends BaseAdapter {
         try {
             PopularBook book = bookList.get(i);
             try {
-                String url = "https://bookstoreandroid.000webhostapp.com/bookstore/image/" + book.getAnh();
+                String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + book.getAnh();
                 new LoadImageInternet(holder.imgHinh).execute(url);
             }catch (Exception e){
                 //holder.imgAnh.setImageResource(R.drawable.th1);

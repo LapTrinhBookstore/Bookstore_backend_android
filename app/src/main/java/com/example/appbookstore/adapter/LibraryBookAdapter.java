@@ -8,12 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.appbookstore.R;
-import com.example.appbookstore.model.BookLibrary;
+import com.example.appbookstore.model.LibraryBook;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,12 +20,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-public class BookLibraryAdapter extends BaseAdapter {
+public class LibraryBookAdapter extends BaseAdapter {
     private Context context;
     private int layout;
-    private List<BookLibrary> bookList;
+    private List<LibraryBook> bookList;
 
-    public BookLibraryAdapter(Context context, int layout, List<BookLibrary> bookList) {
+    public LibraryBookAdapter(Context context, int layout, List<LibraryBook> bookList) {
         this.context = context;
         this.layout = layout;
         this.bookList = bookList;
@@ -70,13 +69,13 @@ public class BookLibraryAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         try {
-            BookLibrary book = bookList.get(i);
+            LibraryBook book = bookList.get(i);
             String ten = book.getTen();
             if(ten.length() > 65)
                 ten = ten.substring(0, 63) + "...";
             holder.txtTen.setText(ten);
             try {
-                String url = "https://bookstoreandroid.000webhostapp.com/bookstore/image/" + book.getHinh();
+                String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + book.getHinh();
                 new LoadImageInternet(holder.imgHinh).execute(url);
             }catch (Exception e){
                 //holder.imgAnh.setImageResource(R.drawable.th1);

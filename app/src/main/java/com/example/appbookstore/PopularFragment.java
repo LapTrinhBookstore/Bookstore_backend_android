@@ -1,6 +1,5 @@
 package com.example.appbookstore;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -21,8 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.appbookstore.adapter.BookAdapter;
-import com.example.appbookstore.model.HomeBook;
+import com.example.appbookstore.adapter.PopularBookAdapter;
 import com.example.appbookstore.model.PopularBook;
 
 import org.json.JSONArray;
@@ -35,11 +33,11 @@ public class PopularFragment extends Fragment {
 
     private ListView lvThinhHanh;
     private ArrayList<PopularBook> bookArrayList;
-    private BookAdapter adapter;
+    private PopularBookAdapter adapter;
     private TextView tvBanChay, tvMienPhi;
     private boolean kt = true;
-    private String urlGetBanChay = "https://bookstoreandroid.000webhostapp.com/bookstore/thinhhanhtraphi.php";
-    private String urlGetMienPhi = "https://bookstoreandroid.000webhostapp.com/bookstore/thinhhanhmienphi.php";
+    private String urlGetBanChay = "http://192.168.1.3/Bookstore_android/public/bookstore/thinhHanhTraPhi.php";
+    private String urlGetMienPhi = "http://192.168.1.3/Bookstore_android/public/bookstore/thinhHanhMienPhi.php";
 
     @Nullable
     @Override
@@ -52,7 +50,7 @@ public class PopularFragment extends Fragment {
         tvMienPhi = view.findViewById(R.id.textViewMienPhi);
 
         bookArrayList = new ArrayList<>();
-        adapter = new BookAdapter(getActivity(), R.layout.dong_sach, bookArrayList);
+        adapter = new PopularBookAdapter(getActivity(), R.layout.dong_sach, bookArrayList);
         lvThinhHanh.setAdapter(adapter);
         GetData(urlGetBanChay);
 
@@ -100,7 +98,7 @@ public class PopularFragment extends Fragment {
                                 JSONObject object = response.getJSONObject(i);
                                 bookArrayList.add(new PopularBook(
                                         i + 1,
-                                        object.getString("id"),
+                                        object.getInt("id"),
                                         object.getString("productImg"),
                                         object.getString("name"),
                                         object.getString("publisher"),
@@ -125,9 +123,8 @@ public class PopularFragment extends Fragment {
     }
     private void onCliclToDetail(PopularBook book){
         Intent intent = new Intent(getActivity(), layout_Detail1.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("book", book);
-        intent.putExtras(bundle);
+        intent.putExtra("idbook", book.getId());
+        intent.putExtra("iduser", 1);
         startActivity(intent);
     }
 }
