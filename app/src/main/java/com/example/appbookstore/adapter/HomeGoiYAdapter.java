@@ -48,7 +48,8 @@ public class HomeGoiYAdapter extends RecyclerView.Adapter<HomeGoiYAdapter.GoiYVi
             return;
         }
         try {
-            String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + book.getAnh();
+//            String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + book.getAnh();
+            String url = "http://192.168.1.7/android/Bookstore/public/bookstore/image/" + book.getAnh();
             new LoadImageInternet(holder.imgAnh).execute(url);
         }catch (Exception e){
             //holder.imgAnh.setImageResource(R.drawable.th1);
