@@ -11,7 +11,10 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.Html;
+import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -31,7 +34,7 @@ public class change_information_personal extends AppCompatActivity {
     private Button btnSave;
     private CheckBox checkBoxMale;
     private CheckBox checkBoxFemale;
-    private int gender = 1;
+    private int gender = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -49,6 +52,57 @@ public class change_information_personal extends AppCompatActivity {
         checkBoxMale = (CheckBox) findViewById(R.id.changeInfo_checkBoxMale);
         checkBoxFemale = (CheckBox) findViewById(R.id.changeInfo_checkBoxFeMale);
         btnSave = (Button) findViewById(R.id.changeInfo_Submit);
+        // gender
+        checkBoxMale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean checked = ((CheckBox) v).isChecked();
+                if (checked){
+                    gender = 1;
+                }
+            }
+        });
+
+        checkBoxFemale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean checked = ((CheckBox) v).isChecked();
+                if (checked){
+                    gender = 0;
+                }
+            }
+        });
+        // date picker
+        etDoB.setFocusable(false);
+        DatePicker datePicker = new DatePicker();
+        etDoB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePicker.openDatePicker_EditText(change_information_personal.this, etDoB);
+            }
+        });
+        // fix full name
+        etFullName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()==0){
+                    etFullName.setError("Không được để trống");
+                }
+                else{
+                    etFullName.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         // call api
         getUsers(1);
@@ -56,31 +110,15 @@ public class change_information_personal extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UsersModel usersModel = new UsersModel();
-                usersModel.setName(String.valueOf(etFullName.getText()));
-                usersModel.setDateOfBirth(String.valueOf(etDoB.getText()));
-                checkBoxMale.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        boolean checked = ((CheckBox) v).isChecked();
-                        if (checked){
-                            gender = 1;
-                        }
-                    }
-                });
+                if(etFullName.getText().length() != 0){
+                    UsersModel usersModel = new UsersModel();
+                    usersModel.setName(String.valueOf(etFullName.getText()));
+                    usersModel.setDateOfBirth(String.valueOf(etDoB.getText()));
 
-                checkBoxFemale.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        boolean checked = ((CheckBox) v).isChecked();
-                        if (checked){
-                            gender = 0;
-                        }
-                    }
-                });
-                usersModel.setGender(gender);
-                usersModel.setId(1);
-                callApiUpdateInfoPersonal(usersModel);
+                    usersModel.setGender(gender);
+                    usersModel.setId(1);
+                    callApiUpdateInfoPersonal(usersModel);
+                }
             }
         });
     }
@@ -117,6 +155,7 @@ public class change_information_personal extends AppCompatActivity {
                         if (usersModel != null){
                             etFullName.setText(usersModel.getName());
                             etDoB.setText(usersModel.getDateOfBirth());
+                            gender = usersModel.getGender();
                         }
                     }
                     @Override
@@ -134,7 +173,7 @@ public class change_information_personal extends AppCompatActivity {
                 if(response.isSuccessful()){
                     Toast.makeText(change_information_personal.this, "Thành Công", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(change_information_personal.this, details_personal_info.class);
+                    Intent intent = new Intent(change_information_personal.this, profile_bookstore.class);
                     startActivity(intent);
                 }
             }

@@ -35,7 +35,6 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingRight="10dp"
-        android:text="davidnguyen@gmail.com"
         android:textColor="@color/textColorBlue"
         android:textStyle="bold"/>
 
