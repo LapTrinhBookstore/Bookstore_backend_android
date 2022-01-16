@@ -11,7 +11,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.Html;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +47,28 @@ public class add_bank_account extends AppCompatActivity {
         spnBankName = (Spinner) findViewById(R.id.addBank_bankName);
         etAccountBankNumber = (EditText) findViewById(R.id.addBank_accountBankNumber);
         btnSubmitAddBank = (Button) findViewById(R.id.addbank_submit);
+        // empty
+        etAccountBankNumber.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()==0){
+                    etAccountBankNumber.setError("Không được để trống");
+                }
+                else{
+                    etAccountBankNumber.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         // call api
         btnSubmitAddBank.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +88,6 @@ public class add_bank_account extends AppCompatActivity {
                 bankAccount.setAccountNumber(String.valueOf(etAccountBankNumber.getText()));
                 bankAccount.setIdUser(1);
                 callApiInserBankNumber(bankAccount);
-
 
             }
         });
@@ -101,7 +124,7 @@ public class add_bank_account extends AppCompatActivity {
                 if(response.isSuccessful()){
                     Toast.makeText(add_bank_account.this, "Thành Công", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(add_bank_account.this, bank_account.class);
+                    Intent intent = new Intent(add_bank_account.this, profile_bookstore.class);
                     startActivity(intent);
                 }
             }
