@@ -17,7 +17,7 @@ public interface ApiService {
     Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
     ApiService apiService = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.3/Bookstore_android/public/api/")
+            .baseUrl("http://192.168.204.48/Bookstore_android/public/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiService.class);

@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.example.appbookstore.api.ApiService;
 import com.google.android.material.textfield.TextInputEditText;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -56,6 +57,8 @@ public class profile_bookstore extends AppCompatActivity {
     private TextInputEditText etNewPassword;
     private Button btnSubmitChangePassword;
     private String password = "";
+
+    private CircleImageView profileAvatar;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -129,6 +132,7 @@ public class profile_bookstore extends AppCompatActivity {
                 openDialog(Gravity.BOTTOM, R.layout.activity_dialog_enter_newpassword);
             }
         });
+        profileAvatar = (CircleImageView) findViewById(R.id.profile_image);
 
         // call api
         tvNameProfile = (TextView) findViewById(R.id.profile_fullName);
@@ -177,16 +181,41 @@ public class profile_bookstore extends AppCompatActivity {
         // processing dialog change phone number
         if(view == R.layout.activity_dialog_change_phonenumber){
             etPhoneNumber = dialog.findViewById(R.id.dialogPhoneNumber);
+
+            etPhoneNumber.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if(s.length()==0){
+                        etPhoneNumber.setError("Không được để trống");
+                    }
+                    else{
+                        etPhoneNumber.setError(null);
+                    }
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+
             btnSubmitChangePhone = dialog.findViewById(R.id.dialogPhoneNumber_Submit);
             btnSubmitChangePhone.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    UsersModel usersModel = new UsersModel();
-                    tvPhoneNumberProfile.setText(etPhoneNumber.getText());
-                    usersModel.setPhoneNumber(String.valueOf(etPhoneNumber.getText()));
-                    usersModel.setId(1);
-                    callApiUpdatePhoneNumber(usersModel);
-                    dialog.dismiss();
+                    if (etPhoneNumber.getText().length() != 0){
+                        UsersModel usersModel = new UsersModel();
+                        tvPhoneNumberProfile.setText(etPhoneNumber.getText());
+                        usersModel.setPhoneNumber(String.valueOf(etPhoneNumber.getText()));
+                        usersModel.setId(1);
+                        callApiUpdatePhoneNumber(usersModel);
+                        dialog.dismiss();
+                    }
                 }
             });
         }
@@ -194,16 +223,41 @@ public class profile_bookstore extends AppCompatActivity {
         // processing dialog change email
         if(view == R.layout.activity_dialog_change_email){
             etEmail = dialog.findViewById(R.id.dialogChangeEmail_email);
+
+            etEmail.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if(s.length()==0){
+                        etEmail.setError("Không được để trống");
+                    }
+                    else{
+                        etEmail.setError(null);
+                    }
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+
             btnSubmitChangeEmail = dialog.findViewById(R.id.dialogChangeEmail_submit);
             btnSubmitChangeEmail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    UsersModel usersModel1 = new UsersModel();
-                    tvEmailProfile.setText(etEmail.getText());
-                    usersModel1.setEmail(String.valueOf(etEmail.getText()));
-                    usersModel1.setId(1);
-                    callApiUpdateEmail(usersModel1);
-                    dialog.dismiss();
+                    if (etEmail.getText().length() != 0){
+                        UsersModel usersModel1 = new UsersModel();
+                        tvEmailProfile.setText(etEmail.getText());
+                        usersModel1.setEmail(String.valueOf(etEmail.getText()));
+                        usersModel1.setId(1);
+                        callApiUpdateEmail(usersModel1);
+                        dialog.dismiss();
+                    }
                 }
             });
         }
