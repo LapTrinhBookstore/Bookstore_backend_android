@@ -53,4 +53,10 @@ public interface ApiService {
 
     @POST("product/ratings")
     Call<List<DanhGiaObj>> getTopRating(@Query("id")  int idProduct);
+
+    @POST("product/all-rating")
+    Call<List<DanhGiaObj>> AllRating(@Query("id")  int idProduct);
+
+    @POST("product/insertRating")
+    Call<Integer> InsertRating(@Query("productID")  int idProduct, @Query("userID")  int iduser, @Query("amountOfStars")  float amountOfStars,@Query("detail")  String detail);
 }

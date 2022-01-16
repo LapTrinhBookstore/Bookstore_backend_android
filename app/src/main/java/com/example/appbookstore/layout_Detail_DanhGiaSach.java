@@ -17,6 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import com.example.appbookstore.api.ApiService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class layout_Detail_DanhGiaSach extends AppCompatActivity {
     private TextView textView;
     private EditText editText;
@@ -40,6 +46,7 @@ public class layout_Detail_DanhGiaSach extends AppCompatActivity {
         setRatingBar();
         RatingBarChanged();
         SoKiTu();
+        DanhGia();
     }
 
     private void SetClickAbleBtnDang(float rating) {
@@ -53,6 +60,27 @@ public class layout_Detail_DanhGiaSach extends AppCompatActivity {
 
         btn_vietDanhGia.setClickable(clickAble);
         btn_vietDanhGia.setTextColor(getResources().getColor(textColor));
+    }
+
+    private void DanhGia() {
+        btn_vietDanhGia.setOnClickListener(view -> {
+            int idbook = intent.getIntExtra("idbook", 0);
+            int iduser = intent.getIntExtra("iduser", 0);
+            String detail = editText.getText().toString();
+            float star = ratingBar.getRating();
+
+            ApiService.apiService.InsertRating(idbook, iduser, star, detail).enqueue(new Callback<Integer>() {
+                @Override
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
+                    finish();
+                }
+
+                @Override
+                public void onFailure(Call<Integer> call, Throwable t) {
+                    System.out.println(t.getMessage());
+                }
+            });
+        });
     }
 
     private void setRatingBar() {
@@ -119,7 +147,6 @@ public class layout_Detail_DanhGiaSach extends AppCompatActivity {
                             }
                         })
                         .show();
-//                , R.style.AlertDialog
             }
         });
     }

@@ -17,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -53,6 +54,8 @@ public class layout_Detail1 extends AppCompatActivity {
     DanhGiaAdapter danhGiaAdapter;
     Dialog searchDialog;
     DetailBook detailBook;
+    int idSach;
+    int idND;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +67,8 @@ public class layout_Detail1 extends AppCompatActivity {
         Intent intent = getIntent();
         int idbook= intent.getIntExtra("idbook", 0);
         int iduser = intent.getIntExtra("iduser", 0);
+        idSach = idbook;
+        idND = iduser;
         getBook(iduser,idbook);
 
         setColorStatusBar();
@@ -72,6 +77,21 @@ public class layout_Detail1 extends AppCompatActivity {
         RatingBarChanged();
         VietDanhGiaClick();
         MuaSachClick(iduser, idbook);
+    }
+
+    private void initDanhGia(int bought) {
+        LinearLayout dg_tv = findViewById(R.id.dg_tv);
+        SvgRatingBar ratingBar = findViewById(R.id.user_ratingBar);
+        Button btn_vietDanhGia = findViewById(R.id.btn_vietDanhGia);
+        if(bought != 0) {
+            dg_tv.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
+            ratingBar.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
+            btn_vietDanhGia.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        } else {
+            dg_tv.getLayoutParams().height = 0;
+            ratingBar.getLayoutParams().height = 0;
+            btn_vietDanhGia.getLayoutParams().height = 0;
+        }
     }
 
     // call api
@@ -122,6 +142,7 @@ public class layout_Detail1 extends AppCompatActivity {
                         .getProductImg()).into(book_avt);
                 detail_layout.getLayoutParams().height = ConstraintLayout.LayoutParams.MATCH_PARENT;
                 detailBook = book;
+                initDanhGia(detailBook.getBought());
             }
 
             @Override
@@ -156,7 +177,14 @@ public class layout_Detail1 extends AppCompatActivity {
         dialog.show();
 
         TextView tongTien = dialog.findViewById(R.id.thanhToan_tongTien),
-                tienGiam = dialog.findViewById(R.id.thanhTOan_tienGiam);
+                tienGiam = dialog.findViewById(R.id.thanhTOan_tienGiam),
+                thanhToan_giaSach = findViewById(R.id.thanhToan_giaSach),
+                thanhToan_soDu = findViewById(R.id.thanhToan_soDu),
+                thanhToan_soXu = findViewById(R.id.thanhToan_soXu),
+                thanhTOan_tienGiam = findViewById(R.id.thanhTOan_tienGiam);
+
+        String price = String.format(Locale.US, "%,d", (int) detailBook.getPrice()).replace(',', '.');
+        thanhToan_giaSach.setText( price + " đ");
         CheckBox checkBox = dialog.findViewById(R.id.thanhToan_soXu);
         Button thanhToan_btnThanhToan = dialog.findViewById(R.id.thanhToan_btnThanhToan);
 
@@ -341,12 +369,15 @@ public class layout_Detail1 extends AppCompatActivity {
 
     public void XemDanhGia(View view) {
         Intent intent = new Intent(layout_Detail1.this, layout_Detail_XemDanhGia.class);
+        intent.putExtra("idbook", idSach);
         startActivity(intent);
     }
 
     public void DanhGiaSach() {
         Intent intent = new Intent(layout_Detail1.this, layout_Detail_DanhGiaSach.class);
         intent.putExtra("rating", ratingBar1.getRating());
+        intent.putExtra("idbook", idSach);
+        intent.putExtra("iduser", idND);
         startActivity(intent);
     }
 

@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/imageViewUser"
-                android:text="David Nguyen"
+                android:text="Cong Thuan"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
