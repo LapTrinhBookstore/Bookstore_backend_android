@@ -1,11 +1,10 @@
 package com.example.appbookstore;
 
 public class DanhGiaObj {
-    private int avt;
-    private String name, date, cmt;
+    private String avt, name, date, cmt;
     private float rating;
 
-    public DanhGiaObj(int avt, String name, String date, String cmt, float rating) {
+    public DanhGiaObj(String avt, String name, String date, String cmt, float rating) {
         this.avt = avt;
         this.name = name;
         this.date = date;
@@ -13,11 +12,11 @@ public class DanhGiaObj {
         this.rating = rating;
     }
 
-    public int getAvt() {
+    public String getAvt() {
         return avt;
     }
 
-    public void setAvt(int avt) {
+    public void setAvt(String avt) {
         this.avt = avt;
     }
 

@@ -98,6 +98,7 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/detail_intro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
@@ -211,31 +212,31 @@
                         android:text="120"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/googlesans_regular"
-                        android:textSize="16sp"
-                        android:textColor="@color/c_45505F"
-                        android:text="@string/GTSach_isbn"/>
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-                    <TextView
-                        android:id="@+id/GTSach_isbn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/googlesans_regular"
-                        android:textSize="16sp"
-                        android:textColor="@color/c_00204A"
-                        android:text="9780007322602"/>
-                </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:orientation="horizontal">-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/googlesans_regular"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textColor="@color/c_45505F"-->
+<!--                        android:text="@string/GTSach_isbn"/>-->
+<!--                    <View-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="0dp"-->
+<!--                        android:layout_weight="1"/>-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/GTSach_isbn"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/googlesans_regular"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textColor="@color/c_00204A"-->
+<!--                        android:text="9780007322602"/>-->
+<!--                </LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"

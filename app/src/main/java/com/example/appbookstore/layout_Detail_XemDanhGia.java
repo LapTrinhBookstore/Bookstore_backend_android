@@ -69,28 +69,28 @@ public class layout_Detail_XemDanhGia extends AppCompatActivity {
     private List<DanhGiaObj> getListDanhGia() {
         List<DanhGiaObj> list = new ArrayList<>();
 
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 2));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 2));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
+//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
 
         return list;
     }

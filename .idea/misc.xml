@@ -18,7 +18,7 @@
         <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/linear_circle_gradient.xml" value="0.14074074074074075" />
         <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/drawable/tv_white_corner_5.xml" value="0.14537037037037037" />
         <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_add_bank_account.xml" value="0.22" />
-        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_bank_account.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_bank_account.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_change_information_personal.xml" value="0.14666666666666667" />
         <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_details_personal_info.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/AppBookstore-search/app/src/main/res/layout/activity_dialog_change_email.xml" value="0.22" />
@@ -66,11 +66,13 @@
         <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/Bookstore_github/Bookstore/app/src/main/res/layout/home.xml" value="0.22" />
         <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/Bookstore_github/Bookstore/app/src/main/res/layout/item_home_goiy.xml" value="0.10182370820668693" />
         <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/Bookstore_github/Bookstore/app/src/main/res/layout/item_home_theloai.xml" value="0.2041015625" />
-        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/Bookstore_github/Bookstore/app/src/main/res/layout/item_read_book.xml" value="0.129981884057971" />
         <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/Bookstore_github/Bookstore/app/src/main/res/layout/item_sach.xml" value="0.25" />
         <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/Bookstore_github/Bookstore/app/src/main/res/layout/item_sapxep.xml" value="0.17" />
         <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/Bookstore_github/Bookstore/app/src/main/res/layout/item_selected.xml" value="0.21" />
-        <entry key="..\:/Users/nguye/AndroidStudioProjects/LTLTDD/Bookstore_github/Bookstore/app/src/main/res/layout/read_book.xml" value="0.22" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CK-v3/app/src/main/res/layout/activity_layout_detail1.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CK-v3/app/src/main/res/layout/activity_layout_detail_gioi_thieu_sach.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CK-v3/app/src/main/res/layout/activity_layout_detail_gttac_gia.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CK-v3/app/src/main/res/layout/read_book.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/drawable/gradient.xml" value="0.215625" />
         <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/drawable/gradient_rg.xml" value="0.215625" />
         <entry key="..\:/Users/thien/AndroidStudioProjects/LyThuyet/CuoiKi/AppBookstore2/AppBookstore-search/app/src/main/res/drawable/my_gradient_headerprofile.xml" value="0.215625" />
