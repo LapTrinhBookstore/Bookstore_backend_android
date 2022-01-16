@@ -33,7 +33,8 @@ public class ReadBook extends AppCompatActivity {
     ViewPager viewPager;
     List<Pages> mListPage;
     ViewPageAdapter adapter;
-    private String url = "http://192.168.1.3/Bookstore_android/public/bookstore/getPageBook.php?idproduct=";
+//    private String url = "http://192.168.1.3/Bookstore_android/public/bookstore/getPageBook.php?idproduct=";
+    private String url = "http://192.168.1.7/android/Bookstore/public/bookstore/getPageBook.php?idproduct=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

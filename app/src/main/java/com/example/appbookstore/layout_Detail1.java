@@ -34,6 +34,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.appbookstore.api.ApiService;
 import com.example.appbookstore.model.DetailBook;
+import com.example.appbookstore.model.LibraryBook;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -70,7 +71,7 @@ public class layout_Detail1 extends AppCompatActivity {
         LoadDanhGia(idbook);
         RatingBarChanged();
         VietDanhGiaClick();
-        MuaSachClick();
+        MuaSachClick(iduser, idbook);
     }
 
     // call api
@@ -130,7 +131,8 @@ public class layout_Detail1 extends AppCompatActivity {
         });
     }
 
-    private void MuaSachClick() {
+
+    private void MuaSachClick(int iduser, int idbook) {
         Button muaSach = findViewById(R.id.book_muaSach);
         muaSach.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +141,8 @@ public class layout_Detail1 extends AppCompatActivity {
                        ShowThanhToanDialog();
                    } else {
                        Intent intent = new Intent(layout_Detail1.this, ReadBook.class);
+                       intent.putExtra("idbook", idbook);
+                       intent.putExtra("iduser", iduser);
                        startActivity(intent);
                    }
             }
