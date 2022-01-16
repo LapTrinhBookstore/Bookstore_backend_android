@@ -36,8 +36,11 @@ public class PopularFragment extends Fragment {
     private PopularBookAdapter adapter;
     private TextView tvBanChay, tvMienPhi;
     private boolean kt = true;
-    private String urlGetBanChay = "http://192.168.1.3/Bookstore_android/public/bookstore/thinhHanhTraPhi.php";
-    private String urlGetMienPhi = "http://192.168.1.3/Bookstore_android/public/bookstore/thinhHanhMienPhi.php";
+//    private String urlGetBanChay = "http://192.168.1.3/Bookstore_android/public/bookstore/thinhHanhTraPhi.php";
+//    private String urlGetMienPhi = "http://192.168.1.3/Bookstore_android/public/bookstore/thinhHanhMienPhi.php";
+
+    private String urlGetBanChay = "http://192.168.1.7/android/Bookstore/public/bookstore/thinhHanhTraPhi.php";
+    private String urlGetMienPhi = "http://192.168.1.7/android/Bookstore/public/bookstore/thinhHanhMienPhi.php";
 
     @Nullable
     @Override

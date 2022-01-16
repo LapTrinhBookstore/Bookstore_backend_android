@@ -75,7 +75,8 @@ public class LibraryBookAdapter extends BaseAdapter {
                 ten = ten.substring(0, 63) + "...";
             holder.txtTen.setText(ten);
             try {
-                String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + book.getHinh();
+                String url = "http://192.168.1.7/android/Bookstore/public/bookstore/image/" + book.getHinh();
+//                String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + book.getHinh();
                 new LoadImageInternet(holder.imgHinh).execute(url);
             }catch (Exception e){
                 //holder.imgAnh.setImageResource(R.drawable.th1);

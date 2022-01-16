@@ -1,5 +1,6 @@
 package com.example.appbookstore;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -13,8 +14,14 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.appbookstore.api.ApiService;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class layout_Detail_XemDanhGia extends AppCompatActivity {
     RadioGroup radioGroup;
@@ -28,9 +35,11 @@ public class layout_Detail_XemDanhGia extends AppCompatActivity {
 
         radioGroup = (RadioGroup) findViewById(R.id.xemDG_radioBtnGroup);
 
+        Intent intent = getIntent();
+
         setColorStatusBar();
         toolbarNavigation();
-        LoadDanhGia();
+        LoadDanhGia(intent.getIntExtra("idbook", 0));
         setOnclickBtnLocDanhGia();
     }
 
@@ -47,14 +56,24 @@ public class layout_Detail_XemDanhGia extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(view -> onBackPressed());
     }
 
-    private void LoadDanhGia() {
-        List<DanhGiaObj> list = getListDanhGia();
-        danhGiaAdapter = new DanhGiaAdapter(list);
-        rv_DanhGia = (RecyclerView) findViewById(R.id.xemDG_danhsachDG);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        rv_DanhGia.setLayoutManager(linearLayoutManager);
-        rv_DanhGia.setAdapter(danhGiaAdapter);
-        KhongCoDanhGia(list.size());
+    private void LoadDanhGia(int idProduct) {
+        ApiService.apiService.AllRating(idProduct).enqueue(new Callback<List<DanhGiaObj>>() {
+            @Override
+            public void onResponse(Call<List<DanhGiaObj>> call, Response<List<DanhGiaObj>> response) {
+                List<DanhGiaObj> list = response.body();
+                danhGiaAdapter = new DanhGiaAdapter(list);
+                rv_DanhGia = (RecyclerView) findViewById(R.id.xemDG_danhsachDG);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(layout_Detail_XemDanhGia.this, LinearLayoutManager.VERTICAL, false);
+                rv_DanhGia.setLayoutManager(linearLayoutManager);
+                rv_DanhGia.setAdapter(danhGiaAdapter);
+                KhongCoDanhGia(list.size());
+            }
+
+            @Override
+            public void onFailure(Call<List<DanhGiaObj>> call, Throwable t) {
+
+            }
+        });
     }
 
     private void KhongCoDanhGia(int listSize) {
@@ -69,28 +88,6 @@ public class layout_Detail_XemDanhGia extends AppCompatActivity {
     private List<DanhGiaObj> getListDanhGia() {
         List<DanhGiaObj> list = new ArrayList<>();
 
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 2));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 3));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 5));
-//        list.add(new DanhGiaObj(R.drawable.avatar, "Trung Pham", "21/10/2021", "Good", 4));
 
         return list;
     }

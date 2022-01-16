@@ -72,7 +72,8 @@ public class PageFragment extends Fragment {
             Pages pages = (Pages) bundleFrm.get("data");
             if(pages != null){
                 try {
-                    String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + pages.getContent();
+//                    String url = "http://192.168.1.3/Bookstore_android/public/bookstore/image/" + pages.getContent();
+                    String url = "http://192.168.1.7/android/Bookstore/public/bookstore/image/" + pages.getContent();
                     new LoadImageInternet(imgPage).execute(url);
                 }catch (Exception e){
                     //holder.imgAnh.setImageResource(R.drawable.th1);
