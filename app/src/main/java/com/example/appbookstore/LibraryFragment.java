@@ -117,7 +117,7 @@ public class LibraryFragment extends Fragment {
         requestQueue.add(jsonArrayRequest);
     }
     private void onCliclToDetail(LibraryBook book){
-        Intent intent = new Intent(getActivity(), layout_Detail1.class);
+        Intent intent = new Intent(getActivity(), ReadBook.class);
         intent.putExtra("idbook", book.getIdProduct());
         intent.putExtra("iduser", 1);
         startActivity(intent);

@@ -6,10 +6,24 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.appbookstore.model.HomeBook;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +32,8 @@ public class ReadBook extends AppCompatActivity {
     TextView back, next, currentPage, totalPage;
     ViewPager viewPager;
     List<Pages> mListPage;
-
+    ViewPageAdapter adapter;
+    private String url = "http://192.168.1.3/Bookstore_android/public/bookstore/getPageBook.php?idproduct=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +41,17 @@ public class ReadBook extends AppCompatActivity {
         toolbarNavigation();
         setColorStatusBar();
         AnhXa();
-        mListPage = getPageList();
-        ViewPageAdapter adapter = new ViewPageAdapter(getSupportFragmentManager(),
+        mListPage = new ArrayList<>();
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("idbook", 1);
+        url = url + id;
+
+        adapter = new ViewPageAdapter(getSupportFragmentManager(),
                 FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mListPage);
         viewPager.setAdapter(adapter);
+        GetData(url);
         currentPage.setText("1");
-        totalPage.setText(String.valueOf(mListPage.size()));
+
 
         //Sự kiện chuyển viewPager
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -84,15 +104,43 @@ public class ReadBook extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
     }
 
-    private List<Pages> getPageList() {
-        List<Pages> list = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
-            list.add(new Pages("Content " + i));
-        }
-        return list;
+//    private List<Pages> getPageList() {
+//        List<Pages> list = new ArrayList<>();
+//        for (int i = 1; i <= 10; i++) {
+//            list.add(new Pages("Content " + i));
+//        }
+//        return list;
+//    }
+
+    private void GetData(String url){
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        for (int i = 0; i < response.length(); i++){
+                            try {
+                                JSONObject object = response.getJSONObject(i);
+                                mListPage.add(new Pages(
+                                        object.getString("imageName")
+                                ));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        adapter.notifyDataSetChanged();
+                        totalPage.setText(String.valueOf(mListPage.size()));
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(ReadBook.this, "Loi!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
     }
-
-
     private void toolbarNavigation() {
         Toolbar toolbar = findViewById(R.id.docSach_toolbar);
         setSupportActionBar(toolbar);
